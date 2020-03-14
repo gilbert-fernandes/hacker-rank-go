@@ -51,25 +51,20 @@ import "fmt"
 
 func hourglassSum(arr [][]int32) int32 {
 	var max int32 = 0
+
 	for j := 0; j < 4; j++ {
-		line1 := 0
-		line2 := 1
-		line3 := 2
 		for i := 0; i < 4; i++ {
-			a := arr[line1+j][i]
-			b := arr[line1+j][i+1]
-			c := arr[line1+j][i+2]
-			d := arr[line2+j][i+1]
-			e := arr[line3+j][i]
-			f := arr[line3+j][i+1]
-			g := arr[line3+j][i+2]
+			a := arr[j][i]
+			b := arr[j][i+1]
+			c := arr[j][i+2]
+			d := arr[j+1][i+1]
+			e := arr[j+2][i]
+			f := arr[j+2][i+1]
+			g := arr[j+2][i+2]
 			sum := a + b + c + d + e + f + g
 			if sum > max {
 				max = sum
 			}
-			// 0 - *1 *2 *3  4  5  6
-			// 1 - 1 *2  3  4  5  6
-			// 2 - *1 *2 *3  4  5  6
 		}
 	}
 	return max
