@@ -50,8 +50,7 @@ import "fmt"
  */
 
 func hourglassSum(arr [][]int32) int32 {
-	var max int32 = 0
-
+	var max int32 = -100
 	for j := 0; j < 4; j++ {
 		for i := 0; i < 4; i++ {
 			a := arr[j][i]
